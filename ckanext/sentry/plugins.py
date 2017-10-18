@@ -16,3 +16,5 @@ class SentryPlugin(plugins.SingletonPlugin):
     def make_middleware(self, app, config):
         from raven.contrib.pylons import Sentry
         return Sentry(app, config)
+
+    make_error_log_middleware = make_middleware
